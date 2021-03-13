@@ -2,15 +2,54 @@ const Header = (title, date, temp) => {
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
+
   // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
+
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   //
-  //  <div class="header">
-  //    <span class="date">{ date }</span>
-  //    <h1>{ title }</h1>
-  //    <span class="temp">{ temp }</span>
+  
+  //  <div class="header">  div-class1
+  //    <span class="date">{ date }</span> span-class2
+  //    <h1>{ title }</h1>   h1
+  //    <span class="temp">{ temp }</span> span-class3 
   //  </div>
   //
+
+  const headerContainer = document.querySelector(".header-container");
+
+//function
+function Header(/* title, date, temp */) {
+  let headerDiv = document.createElement("div");
+  let span = document.createElement("span");
+  let h1 = document.createElement("h1");
+
+  //header
+  headerDiv.classList.add("header");
+
+  //date
+  let span1 = span;
+  headerDiv.appendChild(span1);
+  span1.classList.add("date");
+  span1.textContent = "MARCH 13, 2020";
+
+  //header Title
+  headerDiv.appendChild(h1);
+  h1.textContent = "Lambda Times";
+
+  //temp
+  let span2 = span;
+  headerDiv.appendChild(span2);
+  span2.classList.add("temp");
+  span2.textContent = "58°";
+// return
+  return headerDiv;
+}
+
+let myHeader = Header();
+
+console.log(myHeader);
+
+headerContainer.appendChild(myHeader);
 }
 
 const headerAppender = (selector) => {
