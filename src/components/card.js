@@ -1,3 +1,7 @@
+import axios from 'axios'
+
+console.log("This is axios card", axios);
+
 const Card = (article) => {
   // TASK 5
   // ---------------------
